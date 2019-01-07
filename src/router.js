@@ -3,12 +3,14 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Drivers from "./views/Drivers.vue";
 import Teams from "./views/Teams.vue";
+import Seasons from "./views/Seasons.vue";
 
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
+  linkExactActiveClass: "is-active",
   routes: [
     {
       path: "/",
@@ -24,6 +26,11 @@ export default new Router({
       path: "/teams",
       name: "teams",
       component: Teams
+    },
+    {
+      path: "/seasons",
+      name: "seasons",
+      component: Seasons
     }
   ]
 });
