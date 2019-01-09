@@ -4,6 +4,8 @@ import Home from "./views/Home.vue";
 import Drivers from "./views/Drivers.vue";
 import Teams from "./views/Teams.vue";
 import Seasons from "./views/Seasons.vue";
+import Calendar from "./views/Calendar.vue";
+import Race from "./views/Race.vue";
 
 Vue.use(Router);
 
@@ -31,6 +33,16 @@ export default new Router({
       path: "/seasons",
       name: "seasons",
       component: Seasons
+    },
+    {
+      path: "/calendar/:year",
+      name: "calendar",
+      component: Calendar
+    },
+    {
+      path: "/race/:year/:raceNumber",
+      name: "race",
+      component: Race
     }
   ]
 });

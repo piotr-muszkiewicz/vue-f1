@@ -1,21 +1,22 @@
 <template>
   <div>
-    <table class="table center">
-      <thead>
-        <tr>
-          <th>Rok</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in data" :key="item.season">
-          <td>Sezon {{ item.season }}</td>
-          <td>
-            <a class="button" :href="item.url" target="_blank">Wikipedia</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div v-if="!loading">
+      <table class="table center">
+        <tbody>
+          <tr v-for="item in seasonsData" :key="item.season">
+            <td>Sezon {{ item.season }}</td>
+            <td>
+              <router-link :to="{name: 'calendar', params: {year: item.season}}">Calendar</router-link>
+            </td>
+            <td>Zwycięzca (liczba wygranych)</td>
+            <td>
+              <a class="button" :href="item.url" target="_blank">Wikipedia</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="loading-content" :class="{loading : loading}"></div>
   </div>
 </template>
 
@@ -23,20 +24,22 @@
 import SeasonsApi from "@/services/api/SeasonsApi";
 
 export default {
-  name: "home",
+  name: "Seasons",
   data() {
     return {
       loading: true,
-      data: [],
+      seasonsData: [],
       error: "",
       limit: 100,
       offset: 0
     };
   },
-  mounted() {
+  created() {
     SeasonsApi.getSeasons(this.limit, this.offset)
       .then(seasons => {
-        this.data = seasons.SeasonTable.Seasons;
+        var season_list = seasons.SeasonTable.Seasons;
+        season_list.sort().reverse();
+        this.seasonsData = season_list;
       })
       .catch(error => (this.error = error))
       .finally(() => {
