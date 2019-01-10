@@ -1,0 +1,50 @@
+@import '~bulma/bulma';
+
+.loading-content {
+    &::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(255,255,255,0.5) center no-repeat;
+        content: "";
+        transition: all 0.3s 0.5s;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &::before {
+        background: url("../img/tail-spin.svg") center no-repeat;
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s .5s;
+    }
+    &.loading {
+        &::before,
+        &::after {
+            opacity: 1;
+            visibility: visible
+        }
+    }
+}
+
+.table {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}

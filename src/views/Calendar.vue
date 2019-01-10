@@ -52,10 +52,6 @@ export default {
 
 <style lang="scss" scoped>
 .table {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 600px;
-  text-align: center;
   img {
     width: 30px;
     display: inline-block;

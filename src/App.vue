@@ -35,12 +35,14 @@
   min-height: 100vh;
   flex-direction: column;
   main {
+    padding-top: 20px;
+    padding-bottom: 20px;
     flex: 1;
+    position: relative
   }
 }
 .navbar {
   flex-wrap: wrap;
-  margin-bottom: 20px;
 }
 .navbar-brand {
   width: 100%;
