@@ -6,6 +6,7 @@ import Teams from "./views/Teams.vue";
 import Seasons from "./views/Seasons.vue";
 import Calendar from "./views/Calendar.vue";
 import Race from "./views/Race.vue";
+import Standings from "./views/Standings.vue";
 
 Vue.use(Router);
 
@@ -43,6 +44,11 @@ export default new Router({
       path: "/race/:year/:raceNumber",
       name: "race",
       component: Race
+    },
+    {
+      path: "/standings/:year",
+      name: "standings",
+      component: Standings
     }
   ]
 });

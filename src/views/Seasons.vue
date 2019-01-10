@@ -8,10 +8,7 @@
             <td>
               <router-link :to="{name: 'calendar', params: {year: item.season}}">Calendar</router-link>
             </td>
-            <td>Zwycięzca (liczba wygranych)</td>
-            <td>
-              <a class="button" :href="item.url" target="_blank">Wikipedia</a>
-            </td>
+            <td><router-link :to="{name: 'standings', params: {year: item.season}}">Standings</router-link></td>
           </tr>
         </tbody>
       </table>
@@ -45,7 +42,7 @@ export default {
       .finally(() => {
         this.loading = false;
       });
-  }
+  },
 };
 </script>
 
