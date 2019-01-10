@@ -20,7 +20,7 @@
 <script>
   import LangSelect from "@/components/LangSelect";
   export default {
-    name: "header",
+    name: "navigation",
     components: {
       LangSelect
     }
