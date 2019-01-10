@@ -14,8 +14,9 @@
             <td>{{race.date}}</td>
             <td>
               <router-link
+               class="button is-light"
                 :to="{name: 'race', params: {year: $route.params.year, raceNumber: race.round}}"
-              >Results</router-link>
+              >{{$t('title.results')}}</router-link>
             </td>
           </tr>
         </tbody>

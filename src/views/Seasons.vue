@@ -4,13 +4,13 @@
       <table class="table center">
         <tbody>
           <tr v-for="item in seasonsData" :key="item.season">
-            <td>Sezon {{ item.season }}</td>
+            <td>{{$t('title.season')}} {{ item.season }}</td>
             <td>
-              <router-link :to="{name: 'calendar', params: {year: item.season}}">Calendar</router-link>
+              <router-link class="button is-light" :to="{name: 'calendar', params: {year: item.season}}">{{$t('title.calendar')}}</router-link>
             </td>
             <td>Zwycięzca (liczba wygranych)</td>
             <td>
-              <a class="button" :href="item.url" target="_blank">Wikipedia</a>
+              <a class="button is-light is-small" :href="item.url" target="_blank">Wikipedia</a>
             </td>
           </tr>
         </tbody>

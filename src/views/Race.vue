@@ -5,11 +5,11 @@
         <thead>
           <tr>
             <th>Nr.</th>
-            <th>Driver</th>
-            <th>Team</th>
+            <th>{{$t('title.driver')}}</th>
+            <th>{{$t('title.team')}}</th>
             <th></th>
-            <th>Points</th>
-            <th>Status</th>
+            <th>{{$t('title.points')}}</th>
+            <th>{{$t('title.status')}}</th>
           </tr>
         </thead>
         <tbody>
@@ -40,7 +40,7 @@
         </tbody>
       </table>
       <div v-else class="content">
-        <h1 class="has-text-centered">Comming Soon</h1>
+        <h1 class="has-text-centered">{{$t('title.commingSoon')}}</h1>
       </div>
     </div>
     <div class="loading-content" :class="{loading : loading}"></div>
