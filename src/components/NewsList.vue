@@ -1,7 +1,7 @@
 <template>
   <div class="news-list">
     <div class="news-list__heading">
-      <h1>Sports News</h1>
+      <h1>{{ $t('title.sportNews') }}</h1>
     </div>
     <a class="news-list__item" v-for="news in news_list.articles" :key="news.titler" :href="news.url" target="_blank">
       <img class="news-list__item-img" :src="news.urlToImage">

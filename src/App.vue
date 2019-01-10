@@ -38,7 +38,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
     flex: 1;
-    position: relative
+    position: relative;
   }
 }
 .navbar {
