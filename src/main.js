@@ -13,7 +13,7 @@ require("./assets/sass/_main.scss");
 
 Vue.use(VueI18n);
 const i18n = new VueI18n({
-  locale: "pl", 
+  locale: "en", 
   messages
 });
 
